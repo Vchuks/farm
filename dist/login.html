@@ -41,6 +41,9 @@
     gtag('config', 'UA-130795909-1');
   </script>
 
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="login.js" defer></script>
+
 </head>
 <body>
 
@@ -55,12 +58,13 @@
         </p>
       </header>
       <div class="card-content">
-        <form method="get">
+
+        <form id="login" method="post">
 
           <div class="field spaced">
             <label class="label">Login</label>
             <div class="control icons-left">
-              <input class="input" type="text" name="login" placeholder="user@example.com" autocomplete="username">
+              <input class="input" id="email" type="text" name="login" placeholder="user@example.com" autocomplete="username">
               <span class="icon is-small left"><i class="mdi mdi-account"></i></span>
             </div>
             <p class="help">
@@ -71,7 +75,7 @@
           <div class="field spaced">
             <label class="label">Password</label>
             <p class="control icons-left">
-              <input class="input" type="password" name="password" placeholder="Password" autocomplete="current-password">
+              <input class="input" id="password" type="password" name="password" placeholder="Password" autocomplete="current-password">
               <span class="icon is-small left"><i class="mdi mdi-asterisk"></i></span>
             </p>
             <p class="help">
@@ -92,7 +96,7 @@
 
           <div class="field grouped">
             <div class="control">
-              <button type="submit" class="button blue">
+              <button type="submit" class="button blue" onClick="auth(event)">
                 Login
               </button>
             </div>
@@ -127,7 +131,11 @@
     'https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', '658339141622648');
   fbq('track', 'PageView');
+
+
+
 </script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=658339141622648&ev=PageView&noscript=1"/></noscript>
 
 <!-- Icons below are for demo only. Feel free to use any icon pack. Docs: https://bulma.io/documentation/elements/icon/ -->
