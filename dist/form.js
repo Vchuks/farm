@@ -80,6 +80,15 @@ regForm.addEventListener("submit", function (event) {
       // Handle response
     });
 
+    const inputs = document.querySelectorAll('#name, #cardNumber, #sex, #age, #phoneNumber,#address, #maritalStatus, #nextOfKin, #nextOfKinNumber, #relationship, #bloodPressure, #temperature, #pulse, #weight, #urinalysis, #blood, #bilirubin, #urobilinogen, #ketones, #glucose, #protein, #nitrite, #leukocytes, #ph, #specificGravity');
+
+    inputs.forEach(input => {
+      input.value = '';
+    });
+
+
+
+
   // localStorage.setItem('userEmail', email);
   // localStorage.setItem('userPassword',password);
 });
