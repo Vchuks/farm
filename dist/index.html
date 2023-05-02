@@ -169,7 +169,14 @@
   </div>
 </section>
 
+<!-- popup for details -->
 
+<div class="pop-container">
+
+  <div class="popup">
+    
+  </div>
+</div>
 
   <section class="section main-section">
     <div class="grid gap-6 grid-cols-1 md:grid-cols-3 mb-6">
@@ -189,7 +196,25 @@
         </div>
       </div>
     </div>
-
+    <div class="totalcards">
+      <div class="card rec">
+        <h2 class="bold">Total Records</h2>
+        <p class="recordnum1"></p>
+      </div>
+      <div class="card rec">
+        <h2 class="bold">Total Men</h2>
+        <p class="recordnum2"></p>
+      </div>
+      <div class="card rec">
+        <h2 class="bold">Total Women</h2>
+        <p class="recordnum3"></p>
+      </div>
+    </div>
+    <!-- search part -->
+    <div class="">
+      <input type="text" class="search-input" placeholder="Search by gender,name or card number"/>
+      <button class="search-btn" onclick="searchData()">Search</button>
+    </div>
     <div class="card has-table">
       <header class="card-header  patHeader">
         <p class="card-header-title">
@@ -201,7 +226,7 @@
           <input class="start" type="date">
           <label for="">end-date</label>
           <input class="end" type="date">
-          <button  class="viewMore" onclick="getDateRange(event)">filter</button>
+          <button  class="viewMoree">filter</button>
         </form>
         <a href="#" class="card-header-icon">
           <span class="icon"><i class="mdi mdi-reload"></i></span>
@@ -217,7 +242,7 @@
             <th>Age</th>
             <th>Card Number</th>
             <th>view more</th>
-            <th>Delete</th>
+            <!-- <th>Delete</th> -->
            
           </tr>
           </thead>
