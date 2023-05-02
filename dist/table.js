@@ -66,6 +66,20 @@ function populateTable() {
       if (result.length === 0) {
         patientsRecord.innerHTML = "No Record Found";
       } else {
+        localStorage.setItem("num", result.totalpages);
+        let getN = localStorage.getItem("num");
+let numarr = [];
+for (let a = 0; a < getN; a++) {
+  numarr.push(a);
+}
+console.log(numarr);
+
+let getPageDiv = document.querySelector(".pagination");
+numarr.map((page) => {
+  getPageDiv.innerHTML += `<button onclick="showPage(${page})" class="btnpage">${
+    page + 1
+  }</button>`;
+});
         result.records.rows.map((item) => {
           data += `
                 <tr>
@@ -79,7 +93,6 @@ function populateTable() {
                 </tr>
             `;
           // activepage=result.totalpages
-          localStorage.setItem("num", result.totalpages);
         });
         patientsRecord.innerHTML = data;
         getSpinal.style.display = "none";
@@ -141,19 +154,7 @@ function showPage(num) {
 }
 
 // pagination
-let getN = localStorage.getItem("num");
-let numarr = [];
-for (let a = 0; a < getN; a++) {
-  numarr.push(a);
-}
-console.log(numarr);
 
-let getPageDiv = document.querySelector(".pagination");
-numarr.map((page) => {
-  getPageDiv.innerHTML += `<button onclick="showPage(${page})" class="btnpage">${
-    page + 1
-  }</button>`;
-});
 
 function viewDetails(id) {
   let data = [];
